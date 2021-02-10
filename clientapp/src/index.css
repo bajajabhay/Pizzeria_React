@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: medium;
+  justify-content: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header{
+    background-color: black;
+    color: white;
+
+}
+
+.footer{
+  margin-top:0.5rem;
+  /* padding: 0.5rem; */
+  /* position:fixed; */
+  bottom: 0;
+  padding-top: 8rem;
+  /* left:auto; */
+  width:100%;
+  height: 100%;
+  font-style: italic;
+  color: orange;
+  text-align: center;
+  
+}
+
+.colors{
+  color: white;
+}
+a {
+  color: white;
+  font-size: large;
+}
+
+.styling{
+  /* justify-content: flex-start; */
+  /* align-content: left; */
+  text-align: justify;
+  margin-left: 15px;
+}
+
+.size{
+  text-align: justify;
+}
+
+.char{
+  text-align: center;
+}
+
+.abcd{
+  text-align: center;
+}
+
+.but{
+  text-align: center;
+  
+  margin-left: 590px;
+}
+
+table tr:last-child td {
+    border-bottom: 0;
+}
+table tr td:last-child {
+    border-right:0;
+}
+
+table {
+    border-collapse:collapse;
+}
+
+.padd{
+  padding-top: 1rem;
+}
+
+
+
+.container1 {
+    height : 200 px;
+    position : relative;
+    border : 3 px solid green;
+    color : black;
+
+}.center1 {
+    margin : 0;
+    position : absolute;
+    top: 30px;
+    left: 50%;
+    -ms-transform : translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: black;
+}

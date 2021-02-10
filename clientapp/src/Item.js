@@ -1,0 +1,70 @@
+import React, { Component } from "react";
+import { Button } from "react-bootstrap";
+import "./PizzaOrder.css";
+import { pass } from "./Model";
+
+export class Item extends Component {
+  addValueHandler = (p) => {
+    pass.addtocart(p);
+    pass.totalCostOrder(p);
+  };
+
+  render() {
+    var item = this.props.item;
+    item.count = 1;
+
+    return (
+      <div className="itemDiv">
+        <div className="itemOne">
+          <h4>{item.name}</h4>
+
+          {item.type === "veg" ? (
+            <img
+              width="30"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARAAAAC6CAMAAABRJOIbAAAAkFBMVEX39/f+/v4AgAH///8AewAAeAAAfgAAggD7+fv9+/3I3sjd6t06lTqYw5h8s3xPm08AdQDp8+m21Lb2+/bX6Nfr9Otmp2aNvI3j7+NAlUCFt4VHmUfz+PO/2b8jiiOrzKtTnVMwjTB0rHQYiRlvrG+kyqSLuYucwZxsrG1epF/N4s0rjSux0bFboVuBtoEAbgCViGWxAAAFP0lEQVR4nO3dWXvaOhCA4ZiR5B62mLCEJRAIoU0Iyfn//+7IcKBkmsqbhGfIfFdtL+rwPvKCbCs3N5IkSZIkSZIkSd+pf0j34/IgRhEuaV5eJG4QTgvI52oDMQSrE2S9vCXXclUfiGkDwTqqTpCIXAKCEhCUgKAEBCUgKAFBCQhKQFACghIQlICgBAQlICgBQQkISkBQAoISEJSAoAQEJSAoAUEJCEpAUAKCEhDUlYCAv/+JNcjpDnW/f/rj9wVJP3zrrvM0WZj02QqzaI9+Pg4eKqJwBbGfenvf1lordXjGJSVRyv7DujvvVzBhCWI/b/NZaWW+ehzKKJ0sd/2yJAxBAHr3sVauZ8SMVk+DciTsQABaz26NQyqZNcuQMAMBGI/ycByGyaQECS8QiLp5OQ4ky17hTTACAZjHBTj2O47uFBwkjEAgekmKcaTpdrFBwgcEWuuCw+OQUXeFNsMFBHb6y8uOHCXTArsNFxC4L7G7HNPL/CJMQKBbwcMeWyf9vJviAQLPuoqHFVnlFWEBUtmjgAgHEJhW9rAis3zHEQYgsKl0/DimR1cCAlsvHvZTdnJtjjoIPJS9/PijpJlne+RBZqWuT7/M5DiwUgeBjocD6jH1zh4Exh497AfN/lpDHeTW2xFkX5y509AGgbnXAWJ3milzkIXfAWI/6jhjm6RB4NHzALFD5Jk1yNq3h70YyRgilEHgzvsAsUOkyxhk5fsIkqbdJxrCIDDw9CUGgWzYgnT9XbSfZRZsQUJw2HTLtVm6INAMcEhNU85pAMIg0yB7jN3siimI96vUY8p1L48sCPQCDZCM77x0QUJclR1SHyxBfgYbIWbCEsTzTMh5rlkRuiCLYB4N7TiqUgXxONn+BYhj+p0siN/JVATyyBBkGxBE/WIIEu6s6z7vkgXZhQR5YQjifzr1DMRx35suSLDrMrvhV44gMkI+/1xyDEE/V9CzjGPmnSxIqPmyPYhjzowsyDjIlPshlleqw4BnGT3nBxJFAW5jnkActzPJgsAs4NfdB44goSbdM6bd6YKEuxBRTyxBwk2I6B1HkCAPh/wP4npEhDDIU6g7d8673YRBfD9wd8z94B1hkCjQCNEDniARvIQRidk+H+LrNYjPuZ+GoAwS6DyTDPmCbEI8hZjxHhFpkMi/RyNxHlJpg/h9N+SQWbJ+krnv/Vd7ZQ0Q2iD+595d08scQLw/zKzcpxgGIAO/b1S5n2JmAOLnJeZjzmepuIDAm7+dxvk8JhMQn/cjEtfEEBuQCO58vdntmjlkBOLrMKJmV/Luv/0ZRx5EzCLfehksQGBZeWbErDOvQPiA2G95VRcAMHHW66msQOwYua2015hGzvHBBcSKjCqca9Sb494lTxArUn7dLv16heuYpbclTLmV7ooth8gHJILhrMSBRK23xbbCB8TuNpsii4fuh0fSzb2kGz+Q9L2z96TIdz39ti26xCwvEDtImm+5SXRjc+0r7u5J5qs862YaHZfgYAiyHyXvf1nC/KSh9GRXbnF3hiApyfBXW/9tnFiNxbTkIuZMQVIS6O1eF/uF/88o0kXu49tN67ut/H80gd78fjSLVbJPx+3Xj90g+p6/G+I3iv34/eF4PHw4/bXaf8ka5JzF06+YuQYQrwkISkBQAoISEJSAoAQEJSAoAUEJCEpAUAKCEhCUgKAEBCUgKAFBCQhKQFACghIQlICgBAQlIKiaQQhWI0hj/dEl10e6sk1dIA1FsPRpgtpAqCYgqDpAdKLp9m8NIC3SPVzc4+YH6S7vIUmSJEmSJEnSJfsPAAX0YyS5sRoAAAAASUVORK5CYII="
+            ></img>
+          ) : (
+            <img
+              width="20"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEX///++Ng29MQDMcGC8LQC7JwDSgXHhraO6HAC7IwC8KwC5EwC5GQC7JQC+NQn89vTqx8H58O7UiXvXkYTlubHFUzn36ujIXkjnwLn04t/LaVXETjPw1tHDSy7ThXXHW0TepZrPd2bamo7szcjoxL3y3drAPBbCRifLaVbisqjbnZGSvPNjAAAGgklEQVR4nO2daXPyKhSAERMNSSTuGrV1qW2v7///gTepdlrrAoFzWDI8M51+lGcIh/1AJt2WQ7opbTekSzvtJhj6TzD0n2DoP8HQf64MedQO6CNDvn7ttYHXBX1gGL2SdnCKHxn2bBcNiH4w9J5g6D/B0H+Cof8EQ/8Jhv4TDP0nGPpPMPSfYOg/wdB/gqH/BEP/CYb+Y9OwqEH/FQuG5bA/6W7pgCVfMDrrjnfHEuvnzBrOp+NZnrA4jSjnlx/inEZpzJLss3d6R/hNc4bFskfzQfr4pACNBknanc6Bf9eQYXFaZCzit1p/4NEgX+9AJY0YDrvZQP6UB42z7RTux/ENix1lkbTeRZINJlAViW04H2ex+OO8hadZFybu4BqOelmqoHcpQbaC6EJQDSe5ut/ZcT9y2fDE4ttCN3Y8OGtYzphK+7th0Hlz0/CQQx0C5PneQcP5ywDIryaNNq4ZTsEq8AzXaY0Yhr0cpAX+hi2Up1nwhsVaP4TeElHVvhHcsIybDtHkoNnRDcO3BPwLvcCzvguGywxLsCJXijewhtMMz68imdg2RBZUU4Q0XGILKikCGr7hC1ZtcWfPsESLoldkS1uGxZNVNEh41nDqD2a4xuno7yjGzQZwUIY9jKHafaKZDcNpbkywmhSPzRvO4WcTz8iGxg1fzN7q46xBUwQxPEDO6GWI/jNrWJpshGcS+V4RwnBm/uYpj00anphxwU4nlY6nAIYw66JNyWRXNfQNJ+b6+t/QhSnDkfkwcyaXXETVNuzpbb6oQ9dmDOcmJoX3SeRGNrqGY1tVWFXi1oRhYa8KZVuipuHOTiC9FFFqU0rTkFrpC7/JZXaI9QyHNoYzP8Q7dMOuqaWL+/AOtqHVOFOTSMQaLcOT6XnhX2TG31qGC/PTpmt4imto/SOV+kx1DJd2I2lNKt5w0zHs2Y2kNfQF1dBud39G3OlrGM5tzQx/w4S7+xqGU9t9RU0q3FDUMLQ4cfqBCjcxNAwtLCLeIUc0dKEZVj2iaM1N3bBMzOvcQRhq1A0tz5y+Ec6g1A37Nqf3PzQrZyPDiQuhtAqmKzRDy7PfbzhFM9w60VlUoQbN0IVRaU0i2A9WNxw4Yigae6sbutFZiLt8ZcPCjQ6/MhSckWqBoWAhw39D1nrD9tchWjskzhhixVJLRzBuwesPnRnToBm6sYhRGQrK6f/cIkIzdGKpTeK8grqh1S38H4Sb+eqGRzeG3vE/NENX1tpEJ0011kvt7x7WiIY0OoafTnQXmaiYGoYObB/KbCBqGFo/p1CTCp9S0TB8dyHUMGEmG5094NSBkWkuTGOjY+jAuI1/CEupY+jAJrDEkSEdQwc28pn4nLDWmai17R6Ri6ZOuobWB98yZ2i1DC0eYz8j8ZFqni+1vP8kdftJz3BqdwYlPkyjbWh5A0rq7pOmodWtbrmrT5qGVmON3KUZ3TszFkduVDxigzB8t1eJ4mkFiCFZ2apEqasIEIalrUqUrEKAO6R7O5VIPyXLp284slOJuWw6RYCbzsbzDXwVT3TYC9KQdMwPbLjUtTUwwzfzM2G2ky4dSF6Mvemxm+wtZzBD4/vBWYNE0TCGG7PxNGmSXxAox9DB5EQxlY6jgIZkYa7fp5LDNWDDghpb0JDO+QFrWI1PDUWbpinp4HLuHc1Em0S0q41nSPomOn7WvFiAuS8P+NttcYMUWAiGZIKtqCAInIMWWVFFEDqP8ASzLTIVQfBc0Du8TiNRKxF4Pm+0bNBZ024Cy5C8o6Qsp41zz+IZkmIGv6yRdpQfZEF5G2EM/aUmjWYTBgzJsPH7R8+givnmMQ1JsQLLDM3ZWuvpJ7R3ZpYxzOJN1DyDtyFDQl4z/SkjzVe67yFhvvdULjRfY+HsU/OhIGRDQjbrRN2Rsg7EA3PY764Nt7laWKXJB8wDevhv5232eeO35XiaLZpktH4GviEho10naXBSk0csncA9S2rCsGIzThOppwV4ypI9VPV9YciwYnN4ydlTS5oO8o8xqB4xaVgxOk6+npKN/uxzcBrVj8m+vII/s0oMG35RHne9FWVJXr8FXP1V/6Pt/t8S46XcGvOGF4pRuakpR/qPOD7FmqExgqH/BEP/CYb+Ewz9Jxj6TzD0n2DoP8HQf4Kh/wRD/wmG/hMM/ScY+k8w9J/HhsIETJ5wemRIF6d+Gzhd3eL9bdihcTu4OuxyZdhKgqH/BEP/CYb+Ewz9Jxj6z/+Dw7LVYCvLNQAAAABJRU5ErkJggg=="
+            />
+          )}
+          <br />
+          <h5>₹ {item.price}</h5>
+        </div>
+        <div className="itemTwo">
+          <span>{item.description}</span>
+          <br />
+          <br />
+
+          <b>Ingredients:</b>
+
+          {item.ingredients.map((subitem,i) => {
+            return <span key={i}>{subitem.iname},</span>;
+          })}
+
+          <div>
+            <b>Toppings:</b>
+            {item.topping.map((subitem,i) => {
+              return <span key={i}>{subitem.tname},</span>;
+            })}
+          </div>
+        </div>
+        <div className="itemThree">
+          <img width="150px" height="150px" src={item.image} alt="pizza" />
+          <button
+            type="button"
+            onClick={() => {
+              this.addValueHandler(item);
+            }}
+            className="btn btn-warning "
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Item;

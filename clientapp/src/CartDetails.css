@@ -1,0 +1,94 @@
+.tableRow .firstCol {
+    text-align: center;
+    width: 150px;
+}
+
+.tableRow .firstCol img {
+    width: 60px;
+    height: 60px;
+    margin: 0 5%;
+    border-radius: 10px;
+}
+
+.tableRow .secondCol {
+    width: 25px;
+    padding-top: 2.5%;
+}
+
+.tableRow .secondCol .vegColor {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: green;
+}
+
+.tableRow .secondCol .nonVegColor {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: red;
+}
+
+.tableRow .thirdCol {
+    padding-top: 1.5%;
+    width: 300px;
+    text-align: center;
+}
+
+.tableRow .fourthCol {
+    width: 200px;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.tableRow .fourthCol .quantity {
+    padding: 2% 10% 4%;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid #a8a8a8;
+}
+
+.tableRow .fourthCol button {
+    height: 40px;
+    width: 40px;
+    border: 0;
+    border-radius: 0;
+    background-color: grey;
+    padding: 1% 5%;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.tableRow .fifthCol {
+    text-align: center;
+    padding: 2% 0;
+    width: 200px;
+}
+
+.tableRow .sixthCol {
+    color: red;
+    width: 100px;
+    padding: 2.5% 0;
+    text-align: center;
+}
+
+.tableRow .toppingImg {
+    width: 60px;
+    height: 60px;
+    margin: 2% 25%;
+    border-radius: 10px;
+}
+/*# sourceMappingURL=CartPage.css.map */
+
+.styles{
+    display: flex;
+}
+
+.buts{
+    background-color: black;
+}
+
+cell{
+background-image:url("https://img.icons8.com/flat_round / 2x/delete-sign.png")
+
+}
